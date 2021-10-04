@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import MovieCard from './MovieCard';
 
-function SearchMovies(props) {
+function SearchMovies() {
 
     const [ query, setQuery ] = useState('');
     const [ movies, setMovies ] = useState([]);
@@ -24,8 +24,8 @@ function SearchMovies(props) {
     return (
         <div>
             <form className='form' onSubmit={searchMovies}>
-                <label className='label' htmlFor='query'>Movie name</label>
-                <input className='input' type='text' name='query' placeholder='Ex. Lord of the Rings...'  value={query} onChange={(e) => setQuery(e.target.value)} />
+                <label className='label' htmlFor='query'>Movie Name</label>
+                <input required className='input' type='text' name='query' placeholder='Ex. Lord of the Rings...'  value={query} onChange={(e) => setQuery(e.target.value)} />
                 <button className='button' type='submit'>Search</button>
             </form>
             <div className='card-list'>
